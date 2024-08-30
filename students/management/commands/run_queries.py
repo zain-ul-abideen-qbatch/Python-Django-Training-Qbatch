@@ -2,12 +2,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from students.models import (
-    InstagramComment,
-    InstagramPost,
-    InstagramReaction,
-    InstagramUser,
-)
+from students.models import (InstagramComment, InstagramPost,
+                             InstagramReaction, InstagramUser)
 
 
 class Command(BaseCommand):

@@ -17,11 +17,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
-
 # settings.py
-LOGIN_REDIRECT_URL = 'home'  # Redirect after login
-LOGOUT_REDIRECT_URL = 'login'  # Redirect after logout
+LOGIN_REDIRECT_URL = "home"  # Redirect after login
+LOGOUT_REDIRECT_URL = "login"  # Redirect after logout
 
 # Application definition
 
@@ -43,6 +41,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "students.middleware.SimpleLoggingMiddleware"
 ]
 
 ROOT_URLCONF = "lms.urls"

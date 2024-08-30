@@ -6,12 +6,11 @@ from . import views
 handler404 = "students.views.custom_404_view"
 
 urlpatterns = [
- 
     path(
         "login/", auth_views.LoginView.as_view(template_name="login.html"), name="login"
     ),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
-    path('signup/', views.signup_view, name='signup'),
-    path('', views.Home, name='home'),
-
+    path("signup/", views.signup_view, name="signup"),
+    path("", views.Home, name="home"),
+    path("serialize/",views.serialize_data,name='serialized')
 ]
