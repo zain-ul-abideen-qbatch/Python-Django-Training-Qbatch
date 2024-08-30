@@ -17,6 +17,12 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+
+# settings.py
+LOGIN_REDIRECT_URL = 'home'  # Redirect after login
+LOGOUT_REDIRECT_URL = 'login'  # Redirect after logout
+
 # Application definition
 
 INSTALLED_APPS = [

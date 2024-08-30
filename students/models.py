@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
-from django.contrib.contenttypes.fields import (GenericForeignKey,
-                                                GenericRelation)
+from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.db.models import Q
@@ -428,7 +427,7 @@ class InstagramPost(models.Model):
     reactions = GenericRelation(InstagramReaction)
 
     def __str__(self):
-        return f"User = {self.user}, Post Caption = {self.post_caption}, Post Content = {self.post_content}"
+        return f"User = {self.user.first_name}, Post Caption = {self.post_caption}, Post Content = {self.post_content}"
 
     class Meta:
         verbose_name = "InstagramPost"

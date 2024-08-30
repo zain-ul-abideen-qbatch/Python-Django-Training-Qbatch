@@ -195,31 +195,27 @@ class Command(BaseCommand):
 #     self.stdout.write(self.style.SUCCESS(f"{count} comments created successfully!"))
 
 
-
 #  from django.db.models import Count, Q
 #  from django.db.models import Count, Q,F
 #  from students.models import InstagramUser, InstagramPost, InstagramComment, InstagramReaction
 #  post_reactions = InstagramPost.post_reactions.reactions_on_post()
 #  comment_reactions = InstagramComment.comment_reactions.reactions_on_comments()
- 
 
 
-    
-    
-    #   post = models.ForeignKey(
-    #     InstagramPost, on_delete=models.CASCADE, related_name="comments"
-    # )
-    # user = models.ForeignKey(
-    #     InstagramUser, on_delete=models.CASCADE, related_name="comments"
-    # )
-    # comment_body = models.CharField(max_length=500)
-    # comment_parent = models.ForeignKey(
-    #     "self", null=True, blank=True, on_delete=models.CASCADE, related_name="replies"
-    # )
-    
+#   post = models.ForeignKey(
+#     InstagramPost, on_delete=models.CASCADE, related_name="comments"
+# )
+# user = models.ForeignKey(
+#     InstagramUser, on_delete=models.CASCADE, related_name="comments"
+# )
+# comment_body = models.CharField(max_length=500)
+# comment_parent = models.ForeignKey(
+#     "self", null=True, blank=True, on_delete=models.CASCADE, related_name="replies"
+# )
+
 #      users = InstagramUser.objects.all()
 #      posts = InstagramComment.objects.all()
-     
+
 #      comments = [
 #     {"user": users[0], "post": posts[0], "comment_body": "Amazing post! I love visiting Bwp.", "comment_parent": 1},
 #     {"user": users[1], "post": posts[1], "comment_body": "Lhr is such a vibrant city! So much to do.", "comment_parent": 2},
@@ -239,16 +235,15 @@ class Command(BaseCommand):
 #     {"user": users[15], "post": posts[15], "comment_body": "Abu Dhabi is modern and welcoming.", "comment_parent": 6},
 # ]
 
-     
-   
+
 #      with transaction.atomic():
 #         #  InstagramPost.objects.all().delete()
 #         #  self.stdout.write( self.style.SUCCESS("POSTS Deleted Successfully"))
 #          for comment in comments:
 #              InstagramComment.objects.create(user = comment["user"],post=comment["post"],comment_body=comment["comment_body"],comment_parent = comment["comment_parent"])
 #          self.stdout.write( self.style.SUCCESS("Comments Created Successfully"))
-        
-             
+
+
 # from django.utils import timezone
 # from django.db.models import Q,F,Count
 # start_of_year = timezone.now().replace(month=1,day=1)
@@ -258,6 +253,3 @@ class Command(BaseCommand):
 # print(users)
 
 # users = InstagramUser.objects.annotate(p_count = Count('post',filter=Q(post__created_at__gte=start_of_year))).filter(p_count__gt=10).values('id','first_name','last_name')
-
-
-
