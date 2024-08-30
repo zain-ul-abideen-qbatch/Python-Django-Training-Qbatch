@@ -243,7 +243,7 @@ class DummyTable(models.Model):
     hire_date = models.DateField()
     is_manager = models.BooleanField(default=False)
     department_name = models.CharField(max_length=100)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
+    # company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
     supervisor = models.ForeignKey(
         "self", on_delete=models.SET_NULL, null=True, blank=True
     )

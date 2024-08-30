@@ -11,6 +11,6 @@ urlpatterns = [
     ),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("signup/", views.signup_view, name="signup"),
-    path("", views.Home, name="home"),
-    path("serialize/",views.serialize_data,name='serialized')
+    # path("", views.Home, name="home"),
+    path("serialize/", views.serialize_data, name="serialized"),
 ]

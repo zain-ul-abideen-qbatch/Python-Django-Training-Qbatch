@@ -2,23 +2,22 @@ import asyncio
 
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views.decorators.http import require_http_methods
 
 from .forms import CustomUserCreationForm
+from .models import (InstagramComment, InstagramPost, InstagramReaction,
+                     InstagramUser)
 
-
-from django.core import serializers
-
-from .models import InstagramUser,InstagramReaction,InstagramComment,InstagramPost
 
 def serialize_data(request):
 
     queryset = InstagramUser.objects.all()
 
-    serialized_data = serializers.serialize('json', queryset)
+    serialized_data = serializers.serialize("json", queryset)
 
     return JsonResponse(serialized_data, safe=False)
 
@@ -28,29 +27,10 @@ def serialize_data(request):
     post_reactions = InstagramPost.post_reactions.reactions_on_post()
     comment_reactions = InstagramComment.comment_reactions.reactions_on_comments()
     print(comment_reactions.count())
-    
 
-
-    serialized_data = serializers.serialize('json', comment_reactions)
+    serialized_data = serializers.serialize("json", comment_reactions)
 
     return JsonResponse(serialized_data, safe=False)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # @login_required
